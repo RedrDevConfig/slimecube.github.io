@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SlimeCube — Minecraft Builder. Builds, commissions and tools." data-i18n-content="heroDescription">
+  <meta name="theme-color" content="#0b1118">
+  <link rel="icon" type="image/png" href="assets/images/slime.png">
+  <title>SlimeCube — Minecraft Builder</title>
+  <script>
+    if ("scrollRestoration" in history) history.scrollRestoration = "auto";
+    const navigationType = performance.getEntriesByType("navigation")[0]?.type;
+    if (navigationType === "reload") {
+      document.documentElement.classList.add("is-reloading");
+      history.replaceState(history.state, "", `${location.pathname}${location.search}`);
+      setTimeout(() => {
+        const reloadScreen = document.querySelector(".reload-screen");
+        if (reloadScreen) reloadScreen.hidden = true;
+      }, 900);
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js"></script>
+  <script src="language/spanish.js"></script>
+  <script src="language/english.js"></script>
+  <script defer src="language.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body data-page="home">
+  <div class="reload-screen" role="status" aria-live="polite">
+    <div class="reload-content">
+      <div class="reload-brand">SlimeCube<span>.</span></div>
+      <div class="reload-progress"><span></span></div>
+      <p data-i18n="loading">Cargando...</p>
+    </div>
+  </div>
+  <header class="topbar">
+    <a class="brand" href="#home" data-home-link><span data-site-name>Home</span></a>
+    <button class="menu-toggle" data-i18n-aria-label="menu" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav class="nav">
+      <a href="#builds" data-i18n="buildsNav">Builds</a>
+      <a href="#commissions" data-i18n="commissionsNav">Encargos</a>
+      <div class="language-switch">
+        <button class="language-trigger" type="button" data-language-toggle data-i18n-aria-label="language" aria-label="Idioma" aria-expanded="false" aria-haspopup="true">
+          <span data-current-language>ES</span><span class="language-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <div class="language-menu" data-language-menu hidden>
+          <button type="button" data-language="es" aria-pressed="true"><svg class="language-flag" aria-hidden="true" viewBox="0 0 20 14"><rect width="20" height="14" rx="2" fill="#AA151B"/><path fill="#F1BF00" d="M0 4h20v6H0z"/></svg><span data-i18n="spanish">Español</span><span class="language-check" aria-hidden="true">✓</span></button>
+          <button type="button" data-language="en" aria-pressed="false"><svg class="language-flag" aria-hidden="true" viewBox="0 0 20 14"><rect width="20" height="14" rx="2" fill="#012169"/><path stroke="#fff" stroke-width="4" d="m0 0 20 14M20 0 0 14"/><path stroke="#C8102E" stroke-width="1.5" d="m0 0 20 14M20 0 0 14"/><path stroke="#fff" stroke-width="5" d="M10 0v14M0 7h20"/><path stroke="#C8102E" stroke-width="2.5" d="M10 0v14M0 7h20"/></svg><span data-i18n="english">English</span><span class="language-check" aria-hidden="true">✓</span></button>
+        </div>
+      </div>
+      <a class="nav-cta" href="#contact" data-i18n="contactNav">Contacto ↗</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="profile-avatar" aria-hidden="true"><img data-profile-avatar alt="" hidden><span data-owner-initial>S</span></div>
+        <div class="eyebrow"><span class="pulse"></span> <span data-i18n="builderSince">Builder de Minecraft · desde 2025</span>
+</div>
+        <h1 data-owner-name>SlimeCube</h1>
+        <p class="lead" data-i18n="heroDescription">Hago mapas para servidores de Minecraft: Box PvP, lobbys y arenas.</p>
+      </div>
+    </section>
+
+<section class="section" id="builds">
+  <div class="section-heading">
+    <div class="eyebrow" data-i18n="portfolio">PORTFOLIO</div>
+    <h2><span data-i18n="myBuilds">Mis</span> <span>Builds.</span></h2>
+    <p data-i18n="buildsDescription">Algunos de mis proyectos y construcciones para servidores.</p>
+  </div>
+
+  <div class="cards" id="build-grid"></div>
+</section>
+
+<section class="section commission-section" id="commissions">
+    <div class="commission-heading">
+        <div>
+            <div class="eyebrow" data-i18n="commissions">ENCARGOS</div>
+            <h2 data-i18n="commissionHeading">Qué podés encargarme</h2>
+            <p data-i18n="commissionDescription">Los precios se acuerdan por encargo: dependen del tamaño, el detalle y el plazo. Escribime con lo que necesitás y te paso un número concreto.</p>
+        </div>
+    </div>
+
+    <div class="commission-grid" id="commission-grid"></div>
+</section>
+
+    <section class="section contact-section" id="contact">
+      <div class="eyebrow" data-i18n="contactEyebrow">LET'S BUILD SOMETHING</div><h2><span data-i18n="contactHeading">¿Tienes un proyecto</span> <span data-i18n="contactHeadingEnd">en mente?</span></h2><p class="lead" data-i18n="contactDescription">Envíame tu idea, referencias y versión de Minecraft. Hablamos de los detalles.</p>
+      <div class="actions"><a class="button primary" data-link="discord" data-i18n="contactDiscord" href="https://discord.com/" target="_blank" rel="noreferrer">Contactar por Discord ↗</a></div>
+    </section>
+  </main>
+
+  <footer>
+    </div>
+    <span>© <span id="year"></span> SlimeCube. <span data-i18n="footerCopyright">All rights reserved.</span></span>
+    <span data-i18n="footerDisclaimer">Not affiliated with Mojang or Microsoft.</span>
+  </footer>
+</body>
+</html>
